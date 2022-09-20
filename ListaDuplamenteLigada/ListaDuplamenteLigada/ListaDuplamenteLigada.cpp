@@ -32,7 +32,7 @@ int main()
 void menu()
 {
 	int op = 0;
-	while (op != 8) {
+	while (op != 9) {
 		system("cls"); // somente no windows
 		cout << "Menu Lista Ligada";
 		cout << endl << endl;
@@ -147,7 +147,7 @@ void inserirElemento()
 }
 
 
-// funções a serem implementadas no exericio
+// funÃ§Ãµes a serem implementadas no exericio
 void exibirReverso()
 {
 	if (primeiro != NULL) {
@@ -170,16 +170,16 @@ void excluirPrimeiroElemento()
 	NO* ultimoElemento = ultimo;
 	if (aux != NULL) {
 		if (aux->prox != NULL) {
-			remover = aux;
-			aux = aux->prox;
-			free(remover);
-			aux->ant = NULL;
+			primeiro=primeiro->prox;
+			free(aux);
+			aux=NULL;
+			primeiro->ant=NULL;
 			cout << "Elemento removido com sucesso" << endl;
 		}
 		else {
 			free(aux);
-			aux = NULL;
-			ultimoElemento = NULL;
+			primeiro = NULL;
+			ultimo = NULL;
 			cout << "Elemento removido com sucesso" << endl;
 		}
 	}
@@ -195,14 +195,14 @@ void excluirUltimoElemento()
 	NO* ultimoElemento = ultimo;
 	if (aux != NULL) {
 		if (aux->prox == NULL) {
-			aux = NULL;
-			ultimoElemento = NULL;
+			primeiro = NULL;
+			ultimo = NULL;
 		}else {
-				aux = aux->prox;
-				ultimo = aux;
-				free(aux->prox);
-				aux->prox = NULL;
-				cout << "Elemento removido com sucesso" << endl;
+		    ultimo=ultimo->ant;
+			free(ultimoElemento);
+			ultimoElemento=NULL;
+			ultimo->prox=NULL;
+			cout << "Elemento removido com sucesso" << endl;
 		}
 		
 	}
