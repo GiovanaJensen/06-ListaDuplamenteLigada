@@ -1,3 +1,6 @@
+# Giovana de Oliveira Fernandes
+## giovana.fernandes2@fatec.sp.gov.br
+
 # Lista Duplamente Ligada 
 ---
 
